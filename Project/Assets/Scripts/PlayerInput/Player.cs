@@ -7,12 +7,12 @@ namespace PlayerInput
     public class Player : NetworkBehaviour
     {
         [SerializeField] private Camera camera;
-        
-        
         [SyncVar(hook = nameof(ApplyColorChange))] private Color playerColor;
 
         private InteractableObject prevObject = null;
-        private List<Material> materials = new List<Material>();
+        
+        private BasicBehaviour behaviour;
+        private AimBehaviourBasic aimBehaviour;
         
         public Color PlayerColor
         {
@@ -29,6 +29,8 @@ namespace PlayerInput
             if (isLocalPlayer)
             {
                 camera.transform.parent = transform.parent;
+                behaviour = GetComponent<BasicBehaviour>();
+                aimBehaviour = GetComponent<AimBehaviourBasic>();
             }
             else
             {
@@ -62,7 +64,7 @@ namespace PlayerInput
             if (!isLocalPlayer)
                 return;
 
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton("Fire1") && behaviour.IsOverriding(aimBehaviour))
             {
                 RaycastHit hit;
                 var ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -83,6 +85,11 @@ namespace PlayerInput
                     CmdSetInteraction(prevObject.gameObject, false);
                     prevObject = null;
                 }
+            }
+            else if(prevObject)
+            {
+                CmdSetInteraction(prevObject.gameObject, false);
+                prevObject = null;
             }
         }
 
