@@ -4,6 +4,6 @@ namespace Dynamic_objects
 {
     public interface IActivateObject
     {
-        void Activate(Player player);
+        void Activate(Player player, bool activeState);
     }
 }
