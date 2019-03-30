@@ -9,7 +9,15 @@ namespace PlayerInput
     {
         [SerializeField] private GameObject activationObjectParent;
         private IActivateObject activateObject;
-        
+
+        public void Awake()
+        {
+            if (!activationObjectParent)
+            {
+                activationObjectParent = gameObject;
+            }
+        }
+
         public void Interact(GameObject player, bool activated)
         {
             RpcInteract(player, activated);
