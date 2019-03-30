@@ -12,7 +12,7 @@ namespace PlayerInput
         
         public void Interact(GameObject player, bool activated)
         {
-            
+            RpcInteract(player, activated);
         }
 
         [ClientRpc]

@@ -22,7 +22,22 @@ namespace PlayerInput
         private void Awake()
         {
             playerColor = Random.ColorHSV();
-           
+        }
+
+        private void Start()
+        {
+            if (isLocalPlayer)
+            {
+                camera.transform.parent = transform.parent;
+            }
+            else
+            {
+                Destroy(GetComponent<BasicBehaviour>());
+                Destroy(GetComponent<MoveBehaviour>());
+                Destroy(GetComponent<FlyBehaviour>());
+                Destroy(GetComponent<AimBehaviourBasic>());
+                Destroy(camera.gameObject);
+            }
         }
 
         private void ApplyColorChange(Color newPlayerColor)
