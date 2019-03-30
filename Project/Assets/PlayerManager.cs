@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Network;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -29,6 +30,8 @@ public class PlayerManager : MonoBehaviour
         isGood = true;
         isKillable = true;
         isBad = false;
+        
+        NetworkManager.Manager.AddPlayer(this);
     }
 
     // Update is called once per frame
