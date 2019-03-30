@@ -1,8 +1,9 @@
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace Network
 {
-    public class NetworkManager : NetworkBehaviour
+    public class NetworkManager : MonoBehaviour
     {
         private static NetworkManager instance;
 
