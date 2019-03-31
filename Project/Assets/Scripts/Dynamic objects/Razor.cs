@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayerInput;
 
+
 namespace Dynamic_objects
 {
     public class Razor : EmissiveObject, IActivateObject
     {
-        [SerializeField] private GameObject wheelObject;
+        [SerializeField] private List<GameObject> wheelObjects;
         [SerializeField] private float speed = 1;
         [SerializeField] private Vector3 axis = new Vector3(0, 1, 0);
 
@@ -23,20 +24,18 @@ namespace Dynamic_objects
 
 
         private void Start()
-        {
-            if (wheelObject == null)
-            {
-                wheelObject = gameObject;
-            }
-            
-            Init(wheelObject);
+        {            
+            Init(wheelObjects);
         }
 
         private void Update()
         {
-            if (state)
+            if (!state)
             {
-                wheelObject.transform.Rotate(axis, speed * Time.deltaTime);
+                foreach (var gameObj in wheelObjects)
+                {
+                    gameObj.transform.Rotate(axis, speed * Time.deltaTime);
+                }
             } 
         }
     }

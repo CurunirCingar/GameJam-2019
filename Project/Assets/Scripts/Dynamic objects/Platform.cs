@@ -24,11 +24,6 @@ namespace Dynamic_objects
 
         private void Start()
         {
-            if (platformObject == null)
-            {
-                platformObject = gameObject;
-            }
-
             platformObject.transform.position = notActiveObject.position;
             Init(platformObject);
         }
