@@ -12,6 +12,9 @@ namespace Dynamic_objects
         [SerializeField] private GameObject hammerObject;
         [SerializeField] private float speed = 1f;
 
+        public float LastBadActionTime { get; private set; }
+        public Player LastPlayer { get; private set; }
+
         private bool state = false;
         private float lerpParam = 0;
 
@@ -19,11 +22,19 @@ namespace Dynamic_objects
         {
             state = activeState;
 
+            if (activeState)
+            {
+                LastBadActionTime = Time.time;
+                LastPlayer = player;
+            }
+
             SetEmission(activeState, player.PlayerColor);
         }
 
         private void Start()
         {
+            Debug.LogError("Вы используете ненужный класс. Вы уверены?");
+
             if (hammerObject == null)
             {
                 hammerObject = gameObject;

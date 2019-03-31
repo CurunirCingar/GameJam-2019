@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     
-    private void StartBadRoute()
+    public void StartBadRoute()
     {
         isBadRoute = true;
 
@@ -53,8 +53,10 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         Wall = GameObject.FindWithTag("WALL");
-        BadPlayerStartPosition = GameObject.FindWithTag("BadPosition").transform;
-        Player1StartPosition = GameObject.FindWithTag("GoodPosition").transform;
+        BadPlayerStartPosition = GameObject.FindWithTag("BadPosition")?.transform;
+        Player1StartPosition = GameObject.FindWithTag("GoodPosition")?.transform;
+
+        
         isGood = true;
         isKillable = true;
         isBad = false;
