@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Abilities;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -7,6 +8,7 @@ namespace PlayerInput
     public class Player : NetworkBehaviour
     {
         [SerializeField] private Camera camera;
+        [SerializeField] private List<Ability> abilities;
         [SyncVar(hook = nameof(ApplyColorChange))] private Color playerColor;
 
         private InteractableObject prevObject = null;
@@ -17,6 +19,16 @@ namespace PlayerInput
         public Color PlayerColor
         {
             get { return playerColor; }
+        }
+        
+        public List<Ability> Abilities
+        {
+            get { return abilities; }
+        }
+        
+        public Camera Camera
+        {
+            get { return camera; }
         }
 
         private void Awake()
@@ -39,6 +51,8 @@ namespace PlayerInput
                 Destroy(GetComponent<FlyBehaviour>());
                 Destroy(GetComponent<AimBehaviourBasic>());
                 Destroy(camera.gameObject);
+                
+                ApplyColorChange(playerColor);
             }
         }
 
