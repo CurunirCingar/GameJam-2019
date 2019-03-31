@@ -12067,7 +12067,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-268524
+  m_Name: pb_Mesh-156590
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -35425,8 +35425,25 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 519771652}
+    - target: {fileID: 5390172748442541764, guid: b3a4073ecc57e1f4dbd07cc4faf8372f,
+        type: 3}
+      propertyPath: deathCollider
+      value: 
+      objectReference: {fileID: 2013227072648279084}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a4073ecc57e1f4dbd07cc4faf8372f, type: 3}
+--- !u!114 &2013227072648279084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2593375697179961269, guid: b3a4073ecc57e1f4dbd07cc4faf8372f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2013227072648279083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3400af9eeb6175d4d8f0176949b8351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4315106859604248233
 PrefabInstance:
   m_ObjectHideFlags: 0
