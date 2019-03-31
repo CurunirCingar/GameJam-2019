@@ -22,7 +22,7 @@ namespace Dynamic_objects
         {
             state = activeState;
 
-            if (activeState ^ PlayerManager.isBadRoute)
+            if (activeState == PlayerManager.isBadRoute)
             {
                 LastBadActionTime = Time.time;
                 LastPlayer = player;
