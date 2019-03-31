@@ -16,6 +16,9 @@ namespace Dynamic_objects
         [SerializeField]
         private float speed = 1f;
 
+        public float LastBadActionTime { get; private set; }
+        public Player LastPlayer { get; private set; }
+
         private bool state = false;
         private float lerpParam = 0;
 
@@ -23,13 +26,17 @@ namespace Dynamic_objects
         {
             state = activeState;
 
+            if (activeState == PlayerManager.isBadRoute)
+            {
+                LastBadActionTime = Time.time;
+                LastPlayer = player;
+            }
+
             SetEmission(activeState, player.PlayerColor);
         }
 
         private void Start()
         {
-            Debug.LogError("ШИПЫ НЕ НАНОСЯТ СМЕРТЬ! БЛЕАТЬ!");
-
             if (spikesObject == null)
             {
                 spikesObject = gameObject;
@@ -41,7 +48,7 @@ namespace Dynamic_objects
 
         private void Update()
         {
-            if (state)
+            if (state ^ PlayerManager.isBadRoute)
             {
                 if (lerpParam < 1)
                 {

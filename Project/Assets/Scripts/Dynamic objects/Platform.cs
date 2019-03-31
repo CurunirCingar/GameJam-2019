@@ -12,6 +12,9 @@ namespace Dynamic_objects
         [SerializeField] private GameObject platformObject;
         [SerializeField] private float speed = 1f;
 
+        public float LastBadActionTime { get; private set; }
+        public Player LastPlayer { get; private set; }
+
         private bool state = false;
         private float lerpParam = 0;
 
@@ -19,18 +22,28 @@ namespace Dynamic_objects
         {
             state = activeState;
 
+            if (activeState ^ PlayerManager.isBadRoute)
+            {
+                LastBadActionTime = Time.time;
+                LastPlayer = player;
+            }
+
             SetEmission(activeState, player.PlayerColor);
         }
 
         private void Start()
         {
-            platformObject.transform.position = notActiveObject.position;
             Init(platformObject);
+
+            if (PlayerManager.isBadRoute)
+                platformObject.transform.position = activeObject.position;
+            else
+                platformObject.transform.position = notActiveObject.position;
         }
 
         private void Update()
         {
-            if (state)
+            if (state ^ PlayerManager.isBadRoute)
             {
                 if (lerpParam < 1)
                 {
