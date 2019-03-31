@@ -31,6 +31,7 @@
             </e>
           </e>
         </e>
+        <e p="DeathDeathCollider.cs" t="Include" />
         <e p="EffectExamples" t="Include">
           <e p="Editor" t="Include">
             <e p="PackageManagerAssembly" t="Include">

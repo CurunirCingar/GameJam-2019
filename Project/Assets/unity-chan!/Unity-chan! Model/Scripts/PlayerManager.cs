@@ -58,6 +58,9 @@ public class PlayerManager : NetworkBehaviour
             Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
             Wall.GetComponent<DEATHWALL>().speed *= 5;
             transform.position = BadPlayerStartPosition.position;
+
+            if (isLocalPlayer)
+                fly.enabled = true;
         }
     }
 
