@@ -10,7 +10,8 @@ public class PlayerManager : MonoBehaviour
     private GameObject Wall;
     Transform Player1StartPosition;
     Transform BadPlayerStartPosition;
-    public Transform Checkpoint;
+    private GameObject Barier;
+    public Transform checkpoint;
     public bool CanisKillable; //Есть ли неуязвимость
     public bool isKillable; //Включаем, отключаем бессмертие
     public bool GoodDeath; //НеУбилДругого  
@@ -33,6 +34,7 @@ public class PlayerManager : MonoBehaviour
     public void StartBadRoute()
     {
         isBadRoute = true;
+        Barier.SetActive(true);
 
         Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
         if (isGood)
@@ -46,12 +48,13 @@ public class PlayerManager : MonoBehaviour
 
     public void PlayerGoodDeath()
     {
-        transform.position = Checkpoint.position;
+        transform.position = checkpoint.position;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Barier = GameObject.FindWithTag("Barier");
         Wall = GameObject.FindWithTag("WALL");
         BadPlayerStartPosition = GameObject.FindWithTag("BadPosition")?.transform;
         Player1StartPosition = GameObject.FindWithTag("GoodPosition")?.transform;

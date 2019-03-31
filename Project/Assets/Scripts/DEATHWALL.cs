@@ -27,7 +27,7 @@ public class DEATHWALL : MonoBehaviour
     {
         if (transform.position.z < EndOfLocation.z)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.up * Time.deltaTime * speed);
         }     
     }
 

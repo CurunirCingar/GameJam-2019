@@ -22,7 +22,29 @@ public class DeathCollider : MonoBehaviour
 
         if (player != null)
         {
-            player.GetComponent<PlayerManager>().StartBadRoute();
+
+            if (player.GetComponent<PlayerManager>().isKillable)
+            {
+                Dynamic_objects.IActivateObject nearestActivatable = Network.NetworkManager.Manager.GetNearestActivatableObject(player.transform.position);
+
+                if (nearestActivatable.LastPlayer != player && (Time.time - nearestActivatable.LastBadActionTime < 1f) ) {
+
+                    PlayerManager playerManager = player.GetComponent<PlayerManager>();
+                    playerManager.isGood = true;
+                    foreach (var otherPlayerManager in FindObjectsOfType<PlayerManager>())
+                    {
+                        if ((otherPlayerManager as PlayerManager) != playerManager)
+                        {
+                            (otherPlayerManager as PlayerManager).isBad = true;
+                        }
+                    }
+
+                    player.GetComponent<PlayerManager>().StartBadRoute();
+                } else
+                {
+                    player.GetComponent<PlayerManager>().PlayerGoodDeath();
+                }
+            }
         }
     }
 }
