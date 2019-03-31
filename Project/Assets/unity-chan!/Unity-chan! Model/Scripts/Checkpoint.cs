@@ -21,7 +21,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(other.GetComponent<PlayerManager>() != null)
         {
-            other.GetComponent<PlayerManager>().Checkpoint = transform;
+            other.GetComponent<PlayerManager>().checkpoint = transform;
         }
     
     }
