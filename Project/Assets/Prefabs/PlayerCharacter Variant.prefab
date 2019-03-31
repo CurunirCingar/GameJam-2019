@@ -434,6 +434,136 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398475061964261700, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130907095134658238, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130907095134658238, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130907095134658238, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130907095134658238, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130907095134658238, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130907095134658238, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064359379130666932, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064359379130666932, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064359379130666934, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064359379130666935, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064359379130666935, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049828003756163036, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_Text
+      value: Trust is humanity's hope.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667227051998218498, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412171225952176591, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412171225952176591, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412171225952176591, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412171225952176591, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412171225952176591, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412171225952176591, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 43696208035949205, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 43696208035949205, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897050190432734133, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 119658957682591890, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 119658957682591890, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127688460368310065, guid: dcc36e4fe3f5e234e9bb93a77fee614b,
+        type: 3}
+      propertyPath: m_Text
+      value: Trust is foolish.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcc36e4fe3f5e234e9bb93a77fee614b, type: 3}
 --- !u!1 &6126833384277160224 stripped
