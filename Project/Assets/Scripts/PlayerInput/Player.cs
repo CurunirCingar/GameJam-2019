@@ -87,14 +87,12 @@ namespace PlayerInput
                 if (Physics.Raycast(ray, out hit, 1000f))
                 {
                     var interactedObject = hit.transform.GetComponent<InteractableObject>();
-                    if(prevObject && prevObject != interactedObject)
+                    if (prevObject && prevObject != interactedObject)
                         CmdSetInteraction(prevObject.gameObject, false);
                     if (interactedObject && interactedObject != prevObject)
-                    {
-                        prevObject = interactedObject;
                         CmdSetInteraction(interactedObject.gameObject, true);
-                    }
-                    
+                    prevObject = interactedObject;
+
                 }
                 else if (prevObject)
                 {
