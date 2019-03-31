@@ -56,7 +56,7 @@ public class PlayerManager : NetworkBehaviour
         if (isBad)
         {
             Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
-            Wall.GetComponent<DEATHWALL>().speed *= 5;
+            Wall.GetComponent<DEATHWALL>().speed *= 2;
             transform.position = BadPlayerStartPosition.position;
 
             if (isLocalPlayer)
