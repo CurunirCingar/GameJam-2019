@@ -14,9 +14,12 @@ namespace Dynamic_objects
         public float LastBadActionTime { get; private set; }
         public Player LastPlayer { get; private set; }
 
+        bool state = false;
 
         public void Activate(Player player, bool activeState)
         {
+            state = activeState;
+
             if (activeState == PlayerManager.isBadRoute)
             {
                 fire.Play();
@@ -49,8 +52,11 @@ namespace Dynamic_objects
             }
             
             Init(fireTrapObject);
+        }
 
-            if (PlayerManager.isBadRoute)
+        private void Update()
+        {
+            if (state ^ PlayerManager.isBadRoute)
             {
                 fire.Stop();
                 deathCollider.SetEnable(false);

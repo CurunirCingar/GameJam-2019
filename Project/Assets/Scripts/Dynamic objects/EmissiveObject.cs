@@ -7,7 +7,7 @@ namespace Dynamic_objects
 {
     public class EmissiveObject : MonoBehaviour
     {
-        private Color savedColor;
+        private List<Color> savedColors;
         private List<GameObject> emisObjects;
 
         public void Init(GameObject gameObject)
@@ -22,6 +22,8 @@ namespace Dynamic_objects
             };
 
             Init(list);
+
+            savedColors = new List<Color> { emisObjects[0].GetComponent<Renderer>().material.GetColor("_EmissionColor") };
         }
 
         public void Init(List<GameObject> gameObjects)
@@ -44,12 +46,13 @@ namespace Dynamic_objects
             {
                 if (state)
                 {
-                    savedColor = emisObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
+                    savedColors.Add(emisObject.GetComponent<Renderer>().material.GetColor("_EmissionColor"));
                     emisObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", newColor);
                 }
                 else
                 {
-                    emisObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", savedColor);
+                    savedColors.Remove(newColor);
+                    emisObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", savedColors[savedColors.Count-1]);
                 }
             }
         }
