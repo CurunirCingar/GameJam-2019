@@ -3,14 +3,16 @@ using UnityEngine.Networking;
 
 namespace Network
 {
-    public class NetworkManager : MonoBehaviour
+    public class GameController : MonoBehaviour
     {
-        private static NetworkManager instance;
+        private static GameController instance;
 
+        public GameObject Barrier;
+        
         private PlayerManager player1;
         private PlayerManager player2;
         
-        public static NetworkManager Manager
+        public static GameController Manager
         {
             get { return instance; }
         }

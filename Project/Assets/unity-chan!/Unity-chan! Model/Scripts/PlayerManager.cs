@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Barier = GameObject.FindWithTag("Barier");
+        Barier = GameController.Manager.Barrier;
         Wall = GameObject.FindWithTag("WALL");
         BadPlayerStartPosition = GameObject.FindWithTag("BadPosition")?.transform;
         Player1StartPosition = GameObject.FindWithTag("GoodPosition")?.transform;
@@ -65,7 +65,7 @@ public class PlayerManager : MonoBehaviour
         isKillable = true;
         isBad = false;
         
-        NetworkManager.Manager.AddPlayer(this);
+        GameController.Manager.AddPlayer(this);
     }
 
     // Update is called once per frame

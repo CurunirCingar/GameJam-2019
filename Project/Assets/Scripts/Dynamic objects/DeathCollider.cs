@@ -25,7 +25,7 @@ public class DeathCollider : MonoBehaviour
 
             if (player.GetComponent<PlayerManager>().isKillable)
             {
-                Dynamic_objects.IActivateObject nearestActivatable = Network.NetworkManager.Manager.GetNearestActivatableObject(player.transform.position);
+                Dynamic_objects.IActivateObject nearestActivatable = Network.GameController.Manager.GetNearestActivatableObject(player.transform.position);
 
                 if (nearestActivatable.LastPlayer != player && (Time.time - nearestActivatable.LastBadActionTime < 1f) ) {
 

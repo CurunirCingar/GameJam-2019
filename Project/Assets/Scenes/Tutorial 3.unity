@@ -29254,6 +29254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c24082bf9c5224bbbd89ec774c22a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Barrier: {fileID: 2108014534}
 --- !u!4 &1773654876
 Transform:
   m_ObjectHideFlags: 0
