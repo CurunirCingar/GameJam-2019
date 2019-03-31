@@ -52,7 +52,8 @@ namespace Dynamic_objects
 
                     platformObject.transform.position = Vector3.Slerp(notActiveObject.position, activeObject.position, lerpParam);
                 }
-            } else
+            }
+            else
             {
                 if (lerpParam > 0)
                 {
