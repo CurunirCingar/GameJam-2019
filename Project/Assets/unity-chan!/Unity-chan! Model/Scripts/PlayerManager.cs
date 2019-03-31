@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static bool isBadRoute = false;
 
+    [SerializeField] private FlyBehaviour fly;
     private GameObject Wall;
     Transform Player1StartPosition;
     Transform BadPlayerStartPosition;
@@ -24,7 +25,7 @@ public class PlayerManager : MonoBehaviour
 
     public void GetSkills()
     {
-        GetComponent<FlyBehaviour>().enabled = true; //Может летать
+        fly.enabled = true; //Может летать
         CanisKillable = false; //Неубиваем
         GetComponent<MoveBehaviour>().runSpeed = Acceleration; // Быстро бегает
         GetComponent<MoveBehaviour>().jumpHeight = DoubleJump; // Двойной прыжок

@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cc1f44e8186c941b9ad2f56aa92052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fly: {fileID: 2672477823464382311}
   checkpoint: {fileID: 0}
   CanisKillable: 0
   isKillable: 0
@@ -167,6 +168,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1256226090594994484}
+    - target: {fileID: 2490797526719925577, guid: 8b043729fe97c9d4b9500994d5f43e42,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 37293216952660777, guid: 8b043729fe97c9d4b9500994d5f43e42,
         type: 3}
       propertyPath: m_AssetId.i0
@@ -296,6 +302,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 542573033293091374}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2672477823464382311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2490797526719925577, guid: 8b043729fe97c9d4b9500994d5f43e42,
+    type: 3}
+  m_PrefabInstance: {fileID: 542573033293091374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672477822793294357}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b86dbbaaa422b64d8a77740b0e66a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8391081256154638818
 PrefabInstance:
   m_ObjectHideFlags: 0
