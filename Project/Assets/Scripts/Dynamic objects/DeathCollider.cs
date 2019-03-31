@@ -33,13 +33,14 @@ public class DeathCollider : MonoBehaviour
                     playerManager.isGood = true;
                     foreach (var otherPlayerManager in FindObjectsOfType<PlayerManager>())
                     {
-                        if ((otherPlayerManager as PlayerManager) != playerManager)
+                        if ((otherPlayerManager) != playerManager)
                         {
-                            (otherPlayerManager as PlayerManager).isBad = true;
+                            (otherPlayerManager).isBad = true;
+                            (otherPlayerManager).isGood = false;
                         }
+                        
+                        otherPlayerManager.StartBadRoute();
                     }
-
-                    player.GetComponent<PlayerManager>().StartBadRoute();
                 } else
                 {
                     player.GetComponent<PlayerManager>().PlayerGoodDeath();

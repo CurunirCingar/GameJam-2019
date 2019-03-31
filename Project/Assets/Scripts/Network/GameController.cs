@@ -8,6 +8,9 @@ namespace Network
         private static GameController instance;
 
         public GameObject Barrier;
+        public Transform BadSpawnPosition;
+        public Transform GoodSpawnPosition;
+        
         
         private PlayerManager player1;
         private PlayerManager player2;

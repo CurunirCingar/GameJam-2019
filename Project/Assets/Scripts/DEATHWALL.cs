@@ -7,7 +7,7 @@ public class DEATHWALL : MonoBehaviour
 {
     public Vector3 StartOfLocation;
     public Vector3 EndOfLocation;
-    [SerializeField] float speed = 1;
+    public float speed = 1;
 
 
     public void SetWallToStart()
@@ -25,6 +25,8 @@ public class DEATHWALL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameController.Manager.Player2)
+            return;
         if (transform.position.z < EndOfLocation.z)
         {
             transform.Translate(Vector3.up * Time.deltaTime * speed);

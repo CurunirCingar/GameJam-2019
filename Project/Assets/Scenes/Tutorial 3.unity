@@ -278,7 +278,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh409000
+  m_Name: pb_Mesh40278
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1258,7 +1258,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh235366
+  m_Name: pb_Mesh40312
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -25549,7 +25549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437313075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6143003, y: 1.4930004, z: -0.5977}
+  m_LocalPosition: {x: -3.6143003, y: 1.091, z: -0.598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4315106859604248234}
@@ -29255,6 +29255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Barrier: {fileID: 2108014534}
+  BadSpawnPosition: {fileID: 1437313076}
+  GoodSpawnPosition: {fileID: 1648443000}
 --- !u!4 &1773654876
 Transform:
   m_ObjectHideFlags: 0

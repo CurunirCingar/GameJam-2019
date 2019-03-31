@@ -15,6 +15,8 @@ namespace PlayerInput
         
         private BasicBehaviour behaviour;
         private AimBehaviourBasic aimBehaviour;
+
+        [HideInInspector] public bool RayEnabled = true;
         
         public Color PlayerColor
         {
@@ -78,7 +80,7 @@ namespace PlayerInput
             if (!isLocalPlayer)
                 return;
 
-            if (Input.GetButton("Fire1") && behaviour.IsOverriding(aimBehaviour))
+            if (Input.GetButton("Fire1") && behaviour.IsOverriding(aimBehaviour) && RayEnabled)
             {
                 RaycastHit hit;
                 var ray = camera.ScreenPointToRay(Input.mousePosition);

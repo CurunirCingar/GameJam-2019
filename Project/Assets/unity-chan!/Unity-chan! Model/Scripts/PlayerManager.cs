@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Network;
+using PlayerInput;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : NetworkBehaviour
 {
     public static bool isBadRoute = false;
 
@@ -25,10 +27,13 @@ public class PlayerManager : MonoBehaviour
 
     public void GetSkills()
     {
+        if (!isLocalPlayer)
+            return;
         fly.enabled = true; //Может летать
         CanisKillable = false; //Неубиваем
         GetComponent<MoveBehaviour>().runSpeed = Acceleration; // Быстро бегает
         GetComponent<MoveBehaviour>().jumpHeight = DoubleJump; // Двойной прыжок
+        GetComponent<Player>().RayEnabled = false;
     }
 
     
@@ -37,14 +42,20 @@ public class PlayerManager : MonoBehaviour
         isBadRoute = true;
         Barier.SetActive(true);
 
-        Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
+       
+        
         if (isGood)
         {
             transform.position = Player1StartPosition.position;
             GetSkills();
         }
+
         if (isBad)
+        {
+            Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
+            Wall.GetComponent<DEATHWALL>().speed *= 5;
             transform.position = BadPlayerStartPosition.position;
+        }
     }
 
     public void PlayerGoodDeath()
@@ -57,8 +68,8 @@ public class PlayerManager : MonoBehaviour
     {
         Barier = GameController.Manager.Barrier;
         Wall = GameObject.FindWithTag("WALL");
-        BadPlayerStartPosition = GameObject.FindWithTag("BadPosition")?.transform;
-        Player1StartPosition = GameObject.FindWithTag("GoodPosition")?.transform;
+        BadPlayerStartPosition = GameController.Manager.BadSpawnPosition;
+        Player1StartPosition = GameController.Manager.GoodSpawnPosition;
 
         
         isGood = true;
