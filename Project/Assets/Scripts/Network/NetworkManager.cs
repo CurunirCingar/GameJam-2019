@@ -39,9 +39,6 @@ namespace Network
                 Destroy(this);
             else
                 instance = this;
-        }
-        
-        
-        
+        }                     
     }
 }

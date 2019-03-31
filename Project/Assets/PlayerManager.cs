@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-
+    private GameObject Wall;
+    Transform Player1StartPosition;
+    Transform BadPlayerStartPosition;
+    public Transform Checkpoint;
     public bool CanisKillable; //Есть ли неуязвимость
     public bool isKillable; //Включаем, отключаем бессмертие
     public bool GoodDeath; //НеУбилДругого  
@@ -24,9 +27,31 @@ public class PlayerManager : MonoBehaviour
         GetComponent<MoveBehaviour>().jumpHeight = DoubleJump; // Двойной прыжок
     }
 
+
+
+    private void StartBadRoute()
+    {
+        Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
+        if (isGood)
+        {
+            transform.position = Player1StartPosition.position;
+            GetSkills();
+        }
+        if (isBad)
+            transform.position = BadPlayerStartPosition.position;
+    }
+
+    public void PlayerGoodDeath()
+    {
+        transform.position = Checkpoint.position;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        Wall = GameObject.FindWithTag("WALL");
+        BadPlayerStartPosition = GameObject.FindWithTag("BadPosition").transform;
+        Player1StartPosition = GameObject.FindWithTag("GoodPosition").transform;
         isGood = true;
         isKillable = true;
         isBad = false;
