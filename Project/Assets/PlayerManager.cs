@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static bool isBadRoute = false;
+
     private GameObject Wall;
     Transform Player1StartPosition;
     Transform BadPlayerStartPosition;
@@ -27,10 +29,11 @@ public class PlayerManager : MonoBehaviour
         GetComponent<MoveBehaviour>().jumpHeight = DoubleJump; // Двойной прыжок
     }
 
-
-
+    
     private void StartBadRoute()
     {
+        isBadRoute = true;
+
         Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
         if (isGood)
         {
@@ -65,9 +68,9 @@ public class PlayerManager : MonoBehaviour
         if (BadDeath)
             isBad = true;
 
-        if (Input.GetButtonDown("E") && CanisKillable == false)
+        if (Input.GetKeyDown(KeyCode.E) && CanisKillable == false)
             isKillable = false;
-        if (Input.GetButtonUp("E") && CanisKillable == false)
+        if (Input.GetKeyUp(KeyCode.E) && CanisKillable == false)
             isKillable = true;
 
     }
