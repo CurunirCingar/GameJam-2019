@@ -278,7 +278,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-130108
+  m_Name: pb_Mesh-174852
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1475,7 +1475,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44502
+  m_Name: pb_Mesh70210
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -18025,7 +18025,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh50682
+  m_Name: pb_Mesh69878
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -35526,6 +35526,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 22459474}
+    - target: {fileID: 1437313076, guid: ec7288747f773eb42bbb7b047378c7aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.9647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437313076, guid: ec7288747f773eb42bbb7b047378c7aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.417
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437313076, guid: ec7288747f773eb42bbb7b047378c7aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.209
+      objectReference: {fileID: 0}
     - target: {fileID: 1158951828, guid: ec7288747f773eb42bbb7b047378c7aa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -37420,7 +37432,7 @@ GameObject:
   - component: {fileID: 779479410}
   m_Layer: 2
   m_Name: DeathWall (1)
-  m_TagString: WALL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
