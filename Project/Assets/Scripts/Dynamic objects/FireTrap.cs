@@ -9,21 +9,31 @@ namespace Dynamic_objects
     {
         [SerializeField] private GameObject fireTrapObject;
         [SerializeField] private ParticleSystem fire;
+        [SerializeField] private DeathCollider deathCollider;
+
+        public float LastBadActionTime { get; private set; }
+        public Player LastPlayer { get; private set; }
+
 
         public void Activate(Player player, bool activeState)
         {
-            if (activeState)
+            if (activeState == PlayerManager.isBadRoute)
+            {
                 fire.Play();
-            else
+                LastBadActionTime = Time.time;
+                LastPlayer = player;
+                deathCollider.SetEnable(true);
+            } else
+            {
                 fire.Stop();
+                deathCollider.SetEnable(false);
+            }
 
             SetEmission(activeState, player.PlayerColor);
         }
 
         private void Start()
         {
-            Debug.LogError("ОГНЕННАЯ ЛОВУШКА НЕ НАНОСИТ СМЕРТЬ! БЛЕАТЬ!");
-
             if (fireTrapObject == null)
             {
                 fireTrapObject = gameObject;
@@ -31,10 +41,24 @@ namespace Dynamic_objects
 
             if (fire == null)
             {
-                fireTrapObject.GetComponent<ParticleSystem>();
+                fire = fireTrapObject.GetComponent<ParticleSystem>();
+            }
+            if (deathCollider == null)
+            {
+                deathCollider = fire.GetComponent<DeathCollider>();
             }
             
             Init(fireTrapObject);
+
+            if (PlayerManager.isBadRoute)
+            {
+                fire.Stop();
+                deathCollider.SetEnable(false);
+            } else
+            {
+                fire.Play();
+                deathCollider.SetEnable(true);
+            }
         }
     }
 }

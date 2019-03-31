@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static bool isBadRoute = false;
 
+    private GameObject Wall;
+    Transform Player1StartPosition;
+    Transform BadPlayerStartPosition;
+    private GameObject Barier;
+    public Transform checkpoint;
     public bool CanisKillable; //Есть ли неуязвимость
     public bool isKillable; //Включаем, отключаем бессмертие
     public bool GoodDeath; //НеУбилДругого  
@@ -24,9 +30,36 @@ public class PlayerManager : MonoBehaviour
         GetComponent<MoveBehaviour>().jumpHeight = DoubleJump; // Двойной прыжок
     }
 
+    
+    public void StartBadRoute()
+    {
+        isBadRoute = true;
+        Barier.SetActive(true);
+
+        Wall.transform.position = Wall.GetComponent<DEATHWALL>().StartOfLocation;
+        if (isGood)
+        {
+            transform.position = Player1StartPosition.position;
+            GetSkills();
+        }
+        if (isBad)
+            transform.position = BadPlayerStartPosition.position;
+    }
+
+    public void PlayerGoodDeath()
+    {
+        transform.position = checkpoint.position;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        Barier = GameObject.FindWithTag("Barier");
+        Wall = GameObject.FindWithTag("WALL");
+        BadPlayerStartPosition = GameObject.FindWithTag("BadPosition")?.transform;
+        Player1StartPosition = GameObject.FindWithTag("GoodPosition")?.transform;
+
+        
         isGood = true;
         isKillable = true;
         isBad = false;
@@ -40,9 +73,9 @@ public class PlayerManager : MonoBehaviour
         if (BadDeath)
             isBad = true;
 
-        if (Input.GetButtonDown("E") && CanisKillable == false)
+        if (Input.GetKeyDown(KeyCode.E) && CanisKillable == false)
             isKillable = false;
-        if (Input.GetButtonUp("E") && CanisKillable == false)
+        if (Input.GetKeyUp(KeyCode.E) && CanisKillable == false)
             isKillable = true;
 
     }
