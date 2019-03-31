@@ -22,8 +22,6 @@ namespace Dynamic_objects
             };
 
             Init(list);
-
-            savedColors = new List<Color> { emisObjects[0].GetComponent<Renderer>().material.GetColor("_EmissionColor") };
         }
 
         public void Init(List<GameObject> gameObjects)
@@ -38,6 +36,8 @@ namespace Dynamic_objects
             {
                 emisObject.GetComponent<Renderer>().sharedMaterial.EnableKeyword("_EMISSION");
             }
+
+            savedColors = new List<Color> { emisObjects[0].GetComponent<Renderer>().material.GetColor("_EmissionColor") };
         }
 
         public void SetEmission(bool state, Color newColor)

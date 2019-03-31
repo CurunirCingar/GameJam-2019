@@ -24,6 +24,9 @@ public class PlayerManager : NetworkBehaviour
     public float Acceleration = 2f;
     public float DoubleJump = 3f;
 
+    public GameObject goodEndingTitles;
+    public GameObject badEndingTitles;
+
 
     public void GetSkills()
     {
@@ -90,5 +93,18 @@ public class PlayerManager : NetworkBehaviour
         if (Input.GetKeyUp(KeyCode.E) && CanisKillable == false)
             isKillable = true;
 
+    }
+
+    [ClientRpc]
+    public void RpcUltimateKill()
+    {
+        if(isGood)
+        {
+            goodEndingTitles.SetActive(true);
+        }
+        else if (isBad)
+        {
+            badEndingTitles.SetActive(true);
+        }
     }
 }
